@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core" >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<title>JaveServer Faces with Hibernate</title>
+</head>
+<body>
+<h2>Register Page</h2>
+<a href="index.jsp">Initial</a>
+&nbsp;|&nbsp;
+<a href="register.xhtml">Register</a>
+&nbsp;|&nbsp;
+<a href="#">Consult</a>
+&nbsp;|&nbsp;
+
+<h:form id="formregister">
+<h:messages/>
+	<h:panelGrid columns="2">
+		
+		<h:outputText value="Name:" />	
+		<h:inputText id="name" size="30" value="#{climb.client.name}" />	
+			
+		<h:outputText value="Cpf:" />	
+		<h:inputText id="cpf" size="20" value="#{climb.client.cpf}" />	
+			
+		<h:outputText value="Email:" />	
+		<h:inputText id="email" size="40" value="#{climb.client.email}" />	
+			
+		<h:outputText value="Gender:" />	
+		<h:selectOneRadio id="gender" value="#{climb.client.gender}">
+			<f:selectItem itemLabel="Female" itemValue="female" />
+			<f:selectItem itemLabel="Male"  itemValue="male" />
+		</h:selectOneRadio> 	
+		
+			<h:outputText value="Marital Status:" />	
+		<h:selectOneMenu id="maritalst" value="#{climb.client.maritalst}">
+			<f:selectItem itemLabel="Single" itemValue="single"/>
+			<f:selectItem itemLabel="Divorced"  itemValue="divorced"/>
+			<f:selectItem itemLabel="Married"  itemValue="married"/>
+		</h:selectOneMenu> 	
+	</h:panelGrid>
+	
+	<h:commandButton action="#{climb.registerclient}" value="Register" />
+</h:form>
+</body>
+</html>
